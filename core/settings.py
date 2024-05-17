@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-AUTO_LOGOUT = {'IDLE_TIME': 700, 'REDIRECT_TO_LOGIN_IMMEDIATELY': True
+AUTO_LOGOUT = {'IDLE_TIME': 900, 'REDIRECT_TO_LOGIN_IMMEDIATELY': True
     , 'MESSAGE': 'The session has expired. Please login again to continue.'}  # logout after 10 minutes of downtime
 AUTH_USER_MODEL = 'users.NewUser'
 
