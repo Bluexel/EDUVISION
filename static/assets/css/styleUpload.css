@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 34.37em;
+  position: relative;
+  margin: 3.12em auto;
+  padding: 3.12em 1.25em;
+  border: 1px solid #1e293b;
+  border-radius: 0.43em;
+}
+input[type="file"] {
+  display: none;
+}
+.LabelsUpload {
+  display: block;
+  position: relative;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 1.12em;
+  font-weight: 500;
+  text-align: center;
+  width: 18.75em;
+  padding: 1.12em 0;
+  margin: auto;
+  border-radius: 0.31em;
+  cursor: pointer;
+}
+#num-of-files {
+  font-weight: 400;
+  text-align: center;
+  margin: 1.25em 0 1.87em 0;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0 !important;
+}
+.container li {
+  font-weight: 500;
+  background-color: #f1ffef;
+  color: #4caf50;
+  margin-bottom: 1em;
+  padding: 0.1em 1em;
+  padding-top: 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+p {
+  line-height: normal !important;
+}

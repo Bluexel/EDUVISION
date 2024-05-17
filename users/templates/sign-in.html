@@ -1,0 +1,111 @@
+{% load crispy_forms_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SignIn</title>
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700"
+            rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link id="pagestyle" href="/static/assets/css/bootstrap.css" rel="stylesheet"/>
+    <link id="pagestyle" href="/static/assets/css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+<main class="main-content">
+    <section>
+        <div class="page-header min-vh-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 d-flex flex-column mx-auto">
+                        <div class="card card-plain mt-8">
+                            <div class="card-header pb-0 text-left bg-transparent">
+                                <h3 class="font-weight-black text-dark display-6">Login</h3>
+                                <p class="mb-0">Welcome back! Please enter your details.</p>
+                            </div>
+                            <div class="card-body">
+                                {% for message in messages %}
+                                    <div class="message text-center alert alert-info  {{ message.tags }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                                <form action="{% url 'login' %}" method="post" class="needs-validation" role="form" novalidate>
+                                    {% csrf_token %}
+                                    {{ loginform|crispy }}
+                                    {% comment %}<label>Name</label>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" placeholder="Enter your name" aria-label="Name"
+                        aria-describedby="name" required>
+                      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                        Please enter a valid name.
+                      </div>
+                    </div>{% endcomment %}
+                                    {% comment %} <label>Email Address</label>
+                    <div class="mb-3">
+                      <input type="email" name="email" class="form-control" placeholder="Enter your email address" aria-label="Email"
+                        aria-describedby="email" required>
+                      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                        Please enter a valid email.
+                      </div>
+                    </div>
+                    <label>Password</label>
+                    <div class="mb-3">
+                      <input type="password" name="password" class="form-control" placeholder="Enter password" aria-label="Password"
+                        aria-describedby="password" required>
+                      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                        Please enter a valid password.
+                      </div>
+                    </div>
+
+
+                    <div class="d-flex align-items-center">
+                      <a href="javascript:;" class="text-xs font-weight-bold ms-auto">Forgot password</a>
+                    </div>{% endcomment %}
+                    <div class="wrapper">
+                      <div class="captcha-area" style="width: 100%;">
+                        <div class="captcha-img">
+                          <img src="/static/assets/img/captcha-bg.png" alt="Captch Background">
+                          <span class="captcha"></span>
+                        </div>
+                        <button class="reload-btn"><i class="fas fa-redo-alt"></i></button>
+                      </div>
+                      <div action="#" class="input-area">
+                        <input type="text" placeholder="Enter captcha" maxlength="6" spellcheck="false" required>
+                        <button class="check-btn">Check</button>
+                      </div>
+                      <div class="status-text"></div>
+                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-dark w-100 mt-4 mb-3">Login</button>
+                                    </div>
+                                    <span class="text-dark font-weight-bold" style="margin-right: 10px;">Forgot password?</span>
+                                    <a href="{% url 'password_reset' %}" style="color: blue;">Reset Password</a>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="position-absolute w-40 top-0 end-0 h-100 d-md-block d-none">
+                            <div class="oblique-image position-absolute fixed-top ms-auto h-100 z-index-0 bg-cover ms-n8"
+                                 style="background-image:url('/static/assets/img/login-bcg.jpg')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Start JS Custom -->
+<script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/perfect-scrollbar/1.5.5/perfect-scrollbar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.4/smooth-scrollbar.js"></script>
+<!-- Start JS Custom -->
+<script src="/static/assets/js/custome.js"></script>
+</body>
+
+</html>
